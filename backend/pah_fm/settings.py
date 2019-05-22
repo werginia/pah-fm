@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     # 3rd party apps
     'corsheaders',
     'rest_framework',
+    'django_countries',
 
     # local apps
     'fleet_management',
@@ -229,3 +230,8 @@ if PRODUCTION:
     EMAIL_HOST_PASSWORD = os.environ.get('MAILGUN_SMTP_PASSWORD')
     EMAIL_ADDRESS = 'no-reply@pah-backend.herokuapp.com'
     FRONTEND_URL = 'https://pah-fm.firebaseapp.com'
+
+COUNTRIES_ONLY = [
+    'UA',
+    'SD',
+]

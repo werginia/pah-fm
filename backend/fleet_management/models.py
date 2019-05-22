@@ -6,6 +6,7 @@ from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.utils.timezone import now
+from django_countries.fields import CountryField
 
 
 class User(AbstractUser):
@@ -36,6 +37,7 @@ class Passenger(models.Model):
     first_name = models.CharField(max_length=60, blank=False)
     last_name = models.CharField(max_length=60, blank=False)
     email = models.EmailField(blank=False)
+    country = CountryField(default='UA')
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
