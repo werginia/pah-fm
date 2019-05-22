@@ -10,6 +10,7 @@ from django_countries.fields import CountryField
 
 
 class User(AbstractUser):
+    country = CountryField(default='UA')
 
     def __str__(self):
         return self.username

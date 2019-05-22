@@ -3,6 +3,11 @@ from django.contrib.auth.admin import UserAdmin
 
 from .models import Car, Passenger, Drive, User, Project, VerificationToken
 
+UserAdmin.list_display += ('country',)
+UserAdmin.list_filter += ('country',)
+UserAdmin.fieldsets += (
+    ('country', {'fields': ('country',)}),
+)
 
 admin.site.register(Car)
 admin.site.register(Passenger)
